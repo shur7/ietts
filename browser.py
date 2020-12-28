@@ -19,6 +19,7 @@ class Browser:
 
     def openWebPage(self):
         self.driver.get('https://ietts.gtb.gov.tr/Home/BelgeSorgula')
+        time.sleep(5)
         try:
             w = WebDriverWait(self.driver, 10)
             w.until(expected_conditions.presence_of_element_located(
@@ -29,12 +30,12 @@ class Browser:
             self.driver.close()
         Browser.chooseCity(self)
 
-    cityIndex = 17
+    cityIndex = 30
     cityName = ''
 
     def chooseCity(self):
         self.cityIndex += 1
-        for i in range(3, 82, 1):  # id=yok > ... , id=200 İç Ticaret
+        for i in range(1, 47, 1):  # id=yok > ... , id=200  İç Ticaret
             self.driver.find_element_by_xpath('//option[@value="{}"]'.format(self.cityIndex)).click()
             self.cityName = self.driver.find_element_by_xpath('//option[@value="{}"]'.format(self.cityIndex)).text
 

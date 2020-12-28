@@ -3,7 +3,7 @@ class Foo(object):
     widht = 0
     rIndex = 1
     cIndex = 0
-    workSheetIndex = 1
+    wIndex = 0
 
     def __call__(self):
         Foo.counter += 1
@@ -32,5 +32,5 @@ class Foo(object):
         return (Foo.cIndex)
 
     def workSheetIndexIncrease(self):
-        Foo.workSheetIndex += 1
-        return (Foo.workSheetIndex)
+        Foo.wIndex += 1
+        return (Foo.wIndex)
